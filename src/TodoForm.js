@@ -1,10 +1,12 @@
 import React, { useState } from "react";
+import trackEvent, { EVENT_TYPES } from "./utils/trackEvent";
 
 const TodoForm = ({ addTodo }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleAddTodo = () => {
     if (inputValue !== "") {
+      trackEvent(EVENT_TYPES.ADD_TODO);
       addTodo(inputValue);
       setInputValue("");
     }

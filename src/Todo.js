@@ -1,10 +1,13 @@
 import React from "react";
+import trackEvent, { EVENT_TYPES } from "./utils/trackEvent";
 
 const Todo = ({ todo, index, toggleTodo, deleteTodo }) => {
   const handleToggleTodo = () => {
+    trackEvent(EVENT_TYPES.TOGGLE_TODO);
     toggleTodo(index);
   };
   const handleDeleteTodo = () => {
+    trackEvent(EVENT_TYPES.DELETE_TODO);
     deleteTodo(index);
   };
 
