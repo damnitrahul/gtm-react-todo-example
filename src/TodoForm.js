@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const TodoForm = ({ addTodo }) => {
   const [inputValue, setInputValue] = useState("");
 
-  const handleSubmit = () => {
+  const handleAddTodo = () => {
     if (inputValue !== "") {
       addTodo(inputValue);
       setInputValue("");
@@ -18,7 +18,7 @@ const TodoForm = ({ addTodo }) => {
         onChange={(e) => setInputValue(e.target.value)}
         value={inputValue}
       />
-      <button onClick={handleSubmit}>Add Todo</button>
+      <button onClick={handleAddTodo}>Add Todo</button>
     </div>
   );
 };
